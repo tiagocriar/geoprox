@@ -26,7 +26,7 @@ app.use(basicAuth({
 app.get('/get-cities', (req, res) => {
   const { latitude, longitude, distance } = req.query;
 
-  if (!latitude || !longitude) {
+  if (!latitude || !longitude || !longitude) {
     return res.status(400).send('Latitude and longitude are required.');
   }
 
